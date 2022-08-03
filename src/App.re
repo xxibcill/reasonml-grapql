@@ -8,14 +8,31 @@ module Styles = {
             alignItems(`center),
             width(`vw(100.)), 
             height(`vh(100.)), 
-            backgroundColor(Colors.primary),
+            backgroundColor(Colors.white),
             position(`relative)
         ]);
 };
 
+type person = {
+    name:string,
+    age: int
+};
+
 [@react.component]
 let make = () => {
+    let testRec = {
+        name : "fred",
+        age: 13
+    };
+    
     <div className=Styles.root>
-        <h1>{"Hello World" |> React.string}</h1>
+        <div>
+            { 
+                switch(Js.Json.stringifyAny(testRec)){
+                    | None => React.null
+                    | Some(str) => str |> React.string 
+                }
+            }
+        </div>
     </div>;
 }

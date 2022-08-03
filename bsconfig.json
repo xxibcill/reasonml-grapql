@@ -17,7 +17,11 @@
   "bs-dependencies": [
     "reason-react",
     "bs-css",
-    "bs-css-emotion"
+    "bs-css-emotion",
+    "reason-apollo"
+  ],
+  "ppx-flags": [
+    "@baransu/graphql_ppx_re/ppx"
   ],
   "refmt": 3
 }
