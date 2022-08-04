@@ -2,9 +2,13 @@
 /* Create an InMemoryCache */
 let inMemoryCache = ApolloInMemoryCache.createInMemoryCache();
 
-/* Create an HTTP Link */
-let httpLink =
-  ApolloLinks.createHttpLink(~uri="https://dex-server.herokuapp.com", ());
+let wslink = ApolloLinks.webSocketLink({
+    uri:"wss://graphql-lt5.bandchain.org/v1/graphql",
+    options:{
+      reconnect:true,
+      connectionParams:None
+    }
+  });
 
-let instance =
-  ReasonApollo.createApolloClient(~link=httpLink, ~cache=inMemoryCache, ());
+let instance = ReasonApollo.createApolloClient(~link=wslink, ~cache=inMemoryCache, ());
+
