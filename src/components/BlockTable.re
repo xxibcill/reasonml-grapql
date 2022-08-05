@@ -3,8 +3,15 @@ module Styles = {
 
     let table =
         style([
+            border(`px(1), `solid, Colors.dark),
             width(`percent(80.)),
+            padding(`px(5))
         ]);
+    let th = 
+        style([
+            border(`px(1), `solid, Colors.dark),
+        ]);
+
 
 };
 
@@ -13,11 +20,12 @@ open Types
 [@react.component]
 let make = (~data:array(blocks)) => {
     <table className=Styles.table>
-        <thead>
+        <thead >
             <tr>
-                <th>{"Height" |> React.string}</th>
-                <th>{"Hash" |> React.string}</th>
-                <th>{"Timestamp" |> React.string}</th>
+                <th className=Styles.th>{"Height" |> React.string}</th>
+                <th className=Styles.th>{"Hash" |> React.string}</th>
+                <th className=Styles.th>{"TXN" |> React.string}</th>
+                <th className=Styles.th>{"Timestamp" |> React.string}</th>
             </tr>
         </thead>
         <tbody>

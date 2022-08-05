@@ -90,7 +90,7 @@ let gray9 = Css.hex("EAEAEA");
 
 let white = Css.hex("ffffff");
 let black = Css.hex("000000");
-
+let dark = Css.hex("121212")
 let textHeading = Css.hex("D5D5D5");
 let textColor = Css.hex("969696");
 let textColorFade = Css.hex("797979");

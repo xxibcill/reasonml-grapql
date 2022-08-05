@@ -3,7 +3,8 @@ module Styles = {
 
     let column =
         style([
-            padding2(~v=`px(12),~h=`px(20)),
+            fontWeight(`num(100)),
+            padding(`px(12)),
         ]);
     let hash = 
         style([
@@ -18,16 +19,16 @@ module Styles = {
 [@react.component]
 let make = (~height:int,~hash:string,~timestamp:string,~txn:int) => {
     <tr >
-        <th className=Styles.column >{height |> React.int}</th>
-        <th className=Styles.column >
+        <td className=Styles.column >{height |> React.int}</td>
+        <td className=Styles.column >
             <div className=Styles.hash>
         {
             hash |> React.string
         }
             </div>
-        </th>
-        <th className=Styles.column >{txn |> React.int}</th>
-        <th className=Styles.column >{timestamp |> React.string}</th>
+        </td>
+        <td className=Styles.column >{txn |> React.int}</td>
+        <td className=Styles.column >{timestamp |> MomentRe.moment |> MomentRe.Moment.format("hh:mm:ss DD-MM-YYYY")|> React.string}</td>
     </tr>
              
 }
