@@ -7,3 +7,4 @@ npm-debug.log
 /bundleOutput/
 *.bs.js
 .graphql_ppx_cache
+./dist
