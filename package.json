@@ -25,6 +25,7 @@
   },
   "devDependencies": {
     "bs-platform": "^9.0.2",
-    "bsb-js": "^1.1.7"
+    "bsb-js": "^1.1.7",
+    "parcel-bundler": "^1.12.5"
   }
 }
