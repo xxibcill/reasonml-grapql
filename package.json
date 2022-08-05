@@ -18,6 +18,8 @@
   "dependencies": {
     "@baransu/graphql_ppx_re": "^0.7.1",
     "bs-css-emotion": "^2.1.0",
+    "bs-moment": "^0.8.0",
+    "moment": "^2.29.4",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
     "reason-apollo": "^0.20.0",

@@ -1714,6 +1714,11 @@ bs-css@14.0.1:
   resolved "https://registry.yarnpkg.com/bs-css/-/bs-css-14.0.1.tgz#983394472d825c590a8f91230bfcb082e9474670"
   integrity sha512-gNaKpU7sQKjyVCTgNa+ReHt0yAx19HcOYbGU4Sg7Jlv04NXK3FCvqffF60xb+x+jMMquOTLIj4VyQPiPSZ82Nw==
 
+bs-moment@^0.8.0:
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/bs-moment/-/bs-moment-0.8.0.tgz#bae462f1352ca5cf810e42ae01e9aa66c482e99d"
+  integrity sha512-mBbPPpgabzOodLYCJjbva3GEVarngK/LU8Xm7Nlxqq4wdG2am467MMLoDuYtZXkTjmUohRRm4M07kU8ckhLj9A==
+
 bs-platform@^9.0.2:
   version "9.0.2"
   resolved "https://registry.yarnpkg.com/bs-platform/-/bs-platform-9.0.2.tgz#a6eac70eb8924a322556dacaccbfbc9b2a0d3a37"
@@ -3894,6 +3899,11 @@ mkdirp@^0.5.1, mkdirp@~0.5.1:
   integrity sha512-FP+p8RB8OWpF3YZBCrP5gtADmtXApB5AMLn+vdyA+PyxCjrCs00mjyUozssO33cwDeT3wNGdLxJ5M//YqtHAJw==
   dependencies:
     minimist "^1.2.6"
+
+moment@^2.29.4:
+  version "2.29.4"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.4.tgz#3dbe052889fe7c1b2ed966fcb3a77328964ef108"
+  integrity sha512-5LC9SOxjSc2HF6vO2CyuTDNivEdoz2IvyJJGj6X8DJ0eFyfszE0QiEd+iXmBvUP3WHxSjFH/vIsA0EN00cgr8w==
 
 ms@2.0.0:
   version "2.0.0"

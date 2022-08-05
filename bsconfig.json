@@ -16,6 +16,7 @@
   "namespace": true,
   "bs-dependencies": [
     "reason-react",
+    "bs-moment",
     "bs-css",
     "bs-css-emotion",
     "reason-apollo"
