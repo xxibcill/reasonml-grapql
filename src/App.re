@@ -13,26 +13,44 @@ module Styles = {
         ]);
 };
 
-type person = {
-    name:string,
-    age: int
-};
+/* Create a GraphQL Query by using the graphql_ppx */
+module GetBlocks = [%graphql
+  {|
+    subscription Subscription_root($limit: Int, $orderBy: [blocks_order_by!]) {
+      blocks(limit: $limit, order_by: $orderBy) {
+        hash
+        height
+      }
+    }
+  |}
+];
+
+module GetBlocksQuery = ReasonApollo.CreateSubscription(GetBlocks);
+
 
 [@react.component]
 let make = () => {
-    let testRec = {
-        name : "fred",
-        age: 13
-    };
-    
-    <div className=Styles.root>
-        <div>
-            { 
-                switch(Js.Json.stringifyAny(testRec)){
-                    | None => React.null
-                    | Some(str) => str |> React.string 
-                }
-            }
-        </div>
-    </div>;
-}
+  let variables = Js.Json.parseExn({|
+    {
+      "limit": 10,
+      "orderBy": [
+        {
+          "height": "desc"
+        }
+      ]
+    }
+  |});
+
+  <div className=Styles.root>
+    <GetBlocksQuery variables=variables>
+      ...{({result}) =>
+        switch (result) {
+        | Loading => <div> {ReasonReact.string("Loading")} </div>
+        | Error(error) => <div> {error.message |> React.string} </div>
+        | Data(response) =>
+          <BlockTable data=response##blocks />
+        }
+      }
+    </GetBlocksQuery>
+  </div>
+};

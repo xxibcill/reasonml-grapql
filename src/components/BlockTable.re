@@ -9,7 +9,7 @@ let make = (~data) => {
         </thead>
         <tbody>
             {
-                data |> Js.Array.map(e => <BlockRow hash=e##hash height=e##height/>) |> React.array
+                data |> Js.Array.map(e => <BlockRow key=Belt.Int.toString(e##height) hash=e##hash height=e##height/>) |> React.array
             }
         </tbody>
     </table>

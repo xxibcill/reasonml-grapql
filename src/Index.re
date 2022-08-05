@@ -12,7 +12,7 @@ style##innerHTML #= GlobalStyles.style;
 
 ReactDOMRe.renderToElementWithId(
   <ReasonApollo.Provider client=Client.instance>
-    <MyQuery />
+    <App />
   </ReasonApollo.Provider>,
   "root",
 );
